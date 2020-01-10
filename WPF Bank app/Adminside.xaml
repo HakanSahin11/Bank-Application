@@ -1,0 +1,72 @@
+﻿<Window x:Class="WPF_Bank_app.Adminside"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Bank_app"
+        xmlns:behaviors="clr-namespace:WPFTextBoxAutoComplete;assembly=WPFTextBoxAutoComplete"
+
+        mc:Ignorable="d"
+        Title="Adminside" Height="450" Width="800">
+    <Grid Margin="-1,0,1,0">
+        <Label x:Name="lbName" Content="Admin Panel" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbList" Content="Select User Account " HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxUserList" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="139" TextInput="ComboBoxUserList_TextInput" SelectionChanged="ComboBoxUserList_SelectionChanged"  Height="25" SelectedValuePath="Content" />
+
+        <Button x:Name="btnNewUser" Content="Add New User" HorizontalAlignment="Left" Margin="664,42,0,0" VerticalAlignment="Top" Width="118" Height="25" Click="BtnNewUser_Click"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="107" Click="BtnExit_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="148,379,0,0" VerticalAlignment="Top" Width="119" Click="Logout"/>
+        <Button x:Name="btnDeleteUser" Content="Delete Current User" HorizontalAlignment="Left" Margin="664,74,0,0" VerticalAlignment="Top" Width="118" IsCancel="True" Height="25"/>
+
+        <TextBox x:Name="txtUserList" HorizontalAlignment="Left" Height="25" Margin="10,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" TextChanged="TxtUserList_TextChanged"
+                 behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding TestItems}"/>
+        <Separator HorizontalAlignment="Left" Height="9" Margin="0,19,0,0" VerticalAlignment="Top" Width="782"/>
+        <Button x:Name="btnFind" Content="Find User" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Width="139" Height="25" Click="BtnFind_Click"/>
+        <Separator HorizontalAlignment="Left" Height="9" Margin="0,115,0,0" VerticalAlignment="Top" Width="782"/>
+        <Label x:Name="lblField1" Content="Account Number" HorizontalAlignment="Left" Margin="12,137,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblField2" Content="Customer Number" HorizontalAlignment="Left" Margin="12,163,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblField3" Content="Username" HorizontalAlignment="Left" Margin="12,189,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblField4" Content="Password" HorizontalAlignment="Left" Margin="12,215,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.49,-0.423"/>
+        <Label x:Name="lblFieldSecond1" Content="First Name" HorizontalAlignment="Left" Margin="300,137,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond2" Content="Last Name" HorizontalAlignment="Left" Margin="300,163,0,0" VerticalAlignment="Top" Width="110"/>
+        <ComboBox x:Name="comboBoxBalance" HorizontalAlignment="Left" Margin="12,293,0,0" VerticalAlignment="Top" Width="105" Height="25" RenderTransformOrigin="-1.009,0.88" SelectionChanged="ComboBoxBalance_SelectionChanged">
+            <ComboBoxItem Content="--Select--"></ComboBoxItem>
+            <ComboBoxItem Content="DKK" Name="ItemBalance1"></ComboBoxItem>
+            <ComboBoxItem Content="Euro" Name="ItemBalance2"></ComboBoxItem>
+            <ComboBoxItem Content="USD" Name="ItemBalance3"></ComboBoxItem>
+            <ComboBoxItem Content="CNY" Name="ItemBalance4"></ComboBoxItem>
+            <ComboBoxItem Content="BTC" Name="ItemBalance5"></ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="btnSaveChanges" Content="Save Changes" HorizontalAlignment="Left" Margin="664,320,0,0" VerticalAlignment="Top" Width="109" Height="25" Click="BtnSaveChanges_Click"/>
+
+        <TextBox x:Name="txtField1" HorizontalAlignment="Left" Height="26" Margin="122,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtField2" HorizontalAlignment="Left" Height="26" Margin="122,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" IsReadOnly="True"/>
+        <TextBox x:Name="txtField3" HorizontalAlignment="Left" Height="26" Margin="122,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.525,1.423"/>
+        <TextBox x:Name="txtField4" HorizontalAlignment="Left" Height="26" Margin="122,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.525,1.423"/>
+        <TextBox x:Name="txtField5" HorizontalAlignment="Left" Height="26" Margin="122,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.525,1.423"/>
+        <TextBox x:Name="txtField6" HorizontalAlignment="Left" Height="26" Margin="122,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.525,1.423"/>
+        <TextBox x:Name="txtField7" HorizontalAlignment="Left" Height="26" Margin="122,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.525,1.423"/>
+        <Label x:Name="lblFieldSecond3" Content="Age" HorizontalAlignment="Left" Margin="300,189,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond4" Content="Birth Year" HorizontalAlignment="Left" Margin="300,215,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond5" Content="Birth Month" HorizontalAlignment="Left" Margin="300,241,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond6" Content="Birthday" HorizontalAlignment="Left" Margin="300,267,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond7" Content="Rentrate Positive" HorizontalAlignment="Left" Margin="300,293,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblFieldSecond8" Content="Rentrate Negative" HorizontalAlignment="Left" Margin="300,319,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblField5" Content="Email Address" HorizontalAlignment="Left" Margin="12,241,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblField6" Content="Phone Number" HorizontalAlignment="Left" Margin="12,267,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.49,-0.423"/>
+        <Separator HorizontalAlignment="Left" Height="9" Margin="0,360,0,0" VerticalAlignment="Top" Width="782"/>
+        <TextBox x:Name="txtFieldSecond1" HorizontalAlignment="Left" Height="26" Margin="410,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond2" HorizontalAlignment="Left" Height="26" Margin="410,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond3" HorizontalAlignment="Left" Height="26" Margin="410,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond4" HorizontalAlignment="Left" Height="26" Margin="410,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond5" HorizontalAlignment="Left" Height="26" Margin="410,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond6" HorizontalAlignment="Left" Height="26" Margin="410,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond7" HorizontalAlignment="Left" Height="26" Margin="410,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtFieldSecond8" HorizontalAlignment="Left" Height="26" Margin="410,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <ComboBox x:Name="comboboxGender" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="122,318,0,0" VerticalAlignment="Top" Width="170" Height="26">
+            <ComboBoxItem Name="GenderItem1" Content="Male"></ComboBoxItem>
+            <ComboBoxItem Name="GenderItem2" Content="Female"></ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="lbField8" Content="Gender" HorizontalAlignment="Left" Margin="10,318,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.49,-0.423"/>
+    </Grid>
+</Window>
