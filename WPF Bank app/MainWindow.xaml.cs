@@ -1,4 +1,4 @@
-﻿  using MongoDB.Driver.Linq;
+using MongoDB.Driver.Linq;
 using System;
 using System.Linq;
 using System.Windows;
