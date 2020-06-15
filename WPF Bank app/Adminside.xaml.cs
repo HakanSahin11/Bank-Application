@@ -23,12 +23,6 @@ using MongoDB.Bson;
 
 namespace WPF_Bank_app
 {
-    /// <summary>
-    /// !ERROR AT line 530!
-    /// Interaction logic for Adminside.xaml
-    /// 
-    /// Set up the change function for "password", then after that add the functions for "delete user" and "add new user" to the bank
-    /// </summary>
     public partial class Adminside : Window
     {
         public IQueryable<DataClass> newQuery;
